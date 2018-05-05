@@ -86,6 +86,12 @@ void read_childproc(int sig)
 {
 	pid_t pid;
 	int status;
+
+	/*
+	等待终止子的进程ID，-1表示任意子进程
+	保存子进程返回值
+	可选项，WNOHANG 无子进程终止返回0,不进入阻塞状态
+	*/
 	pid = waitpid(-1, &status, WNOHANG);
 	printf("remove proc id: %d \n", pid);
 }
