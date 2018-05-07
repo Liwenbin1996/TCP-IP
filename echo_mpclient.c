@@ -1,4 +1,9 @@
-/*回声客户端--基于I/O程序分割*/
+/**************************************************
+*Copyright(c) 2018,wenbin. All right reserved.
+*Author:   wenbin
+*Date:   2018-5-8
+*Description:  回声客户端--基于I/O程序分割
+**************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,8 +32,8 @@ int main(int argc, char *argv[])
 	sock = socket(PF_INET, SOCK_STREAM, 0);
 	memset(&serv_adr, 0, sizeof(serv_adr));
 	serv_adr.sin_family = AF_INET;
-	serv_adr.sin_addr.s_addr = inet_addr(argv[1]);  /*转为整型且为网络字节序*/
-	serv_adr.sin_port = htons(atoi(argv[2]));  /*htons()主机字节序转网络字节序*/
+	serv_adr.sin_addr.s_addr = inet_addr(argv[1]);  
+	serv_adr.sin_port = htons(atoi(argv[2]));  
 
 	if(connect(sock, (struct sockaddr*)&serv_adr, sizeof(serv_adr)) == -1)
 		error_handling("connect() error");

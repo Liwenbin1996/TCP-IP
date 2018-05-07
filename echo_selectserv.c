@@ -1,15 +1,20 @@
-/*并发回声服务器端---基于I/O复用实现*/
-
-/*
-int select(int maxfd, fd_set* readset, fd_set* writeset, \
-				fd_set* exceptset, const struct timeval* timeout);
-maxfd		监视对象描述符的数量
-readset 	将所有关注“是否存在待读取数据”的文件描述符注册到fd_set型变量
-writeset 	将所有关注“是否可传输无阻塞数据”的文件描述符注册到fd_set型变量
-exceptset 	将所有关注“是否发生异常”的文件描述符注册到fd_set型变量
-timeout		调用select函数后，为防止陷入无限阻塞的状态，传递超时信息
-返回值		发生错误是返回-1,超时返回0,返回值大于0时表示发生事件的个数
-*/
+/******************************************************************************
+*Copyright(c) 2018,wenbin. All right reserved.
+*Author:   wenbin
+*Date:   2018-5-8
+*Description:  并发回声服务器端---基于I/O复用实现
+*
+*Function List:
+*    int select(int maxfd, fd_set* readset, fd_set* writeset, \
+*			    		fd_set* exceptset, const struct timeval* timeout);
+*    Parameters:
+*        maxfd: 监视对象描述符的数量
+*        readset: 将所有关注“是否存在待读取数据”的文件描述符注册到fd_set型变量
+*        writeset: 将所有关注“是否可传输无阻塞数据”的文件描述符注册到fd_set型变量
+*        exceptset: 将所有关注“是否发生异常”的文件描述符注册到fd_set型变量
+*        timeout: 调用select函数后，为防止陷入无限阻塞的状态，传递超时信息
+*    Retrun: 发生错误是返回-1,超时返回0,返回值大于0时表示发生事件的个数
+******************************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,10 +62,11 @@ int main(int argc, char *argv[])
 
 	while(1)
 	{
-		/*
-		select()调用后，除发生变化的文件描述符对应位外，其余位都将清0,故每次都需进行初始化
-		select()调用后，timeout会被替换为超时前剩余时间，故每次都需重新设置超时时间
-		*/
+
+		//select()调用后，除发生变化的文件描述符对应位外，
+		//其余位都将清0,故每次都需进行初始化
+		//select()调用后，timeout会被替换为超时前剩余时间，
+		//故每次都需重新设置超时时间
 		cpy_reads = reads;
 		timeout.tv_sec = 5;
 		timeout.tv_usec = 5000;

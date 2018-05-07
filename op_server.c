@@ -1,3 +1,10 @@
+/**************************************************
+*Copyright(c) 2018,wenbin. All right reserved.
+*Author:   wenbin
+*Date:   2018-5-8
+*Description:   计算器服务器端
+**************************************************/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>

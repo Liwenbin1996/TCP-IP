@@ -1,3 +1,10 @@
+/**************************************************
+*Copyright(c) 2018,wenbin. All right reserved.
+*Author:   wenbin
+*Date:   2018-5-8
+*Description:   计算器客户端
+**************************************************/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

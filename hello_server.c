@@ -1,3 +1,10 @@
+/**************************************************
+*Copyright(c) 2018,wenbin. All right reserved.
+*Author:   wenbin
+*Date:   2018-5-8
+*Description:  “hello, world”服务器端
+**************************************************/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -37,6 +44,7 @@ int main(int argc, char *argv[])
 
 	if(listen(serv_sock, 5)==-1)
 		error_handling("listen() error");
+
 	clnt_addr_size=sizeof(clnt_addr);
 	clnt_sock=accept(serv_sock,(struct sockaddr*)&clnt_addr, &clnt_addr_size);
 	if(clnt_sock==-1)
@@ -54,3 +62,4 @@ void error_handling(char *message)
 	fputc('\n', stderr);
 	exit(1);
 }
+

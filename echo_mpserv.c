@@ -1,4 +1,18 @@
-/*并发回声服务器端---基于多进程实现*/
+/******************************************************************
+*Copyright(c) 2018,wenbin. All right reserved.
+*Author:   wenbin
+*Date:   2018-5-8
+*Description:  并发回声服务器端---基于多进程实现
+*
+*Function List:
+*	function:
+*		pid_t waitpid(pid_t pid, int *statloc, int options);
+*	Parameters:
+*		pid:   等待终止的子进程ID，-1表示任意子进程
+*		statloc:   保存子进程返回值
+*		options:   可选项，WNOHANG 无子进程终止返回0,不进入阻塞状态
+*	Return:   成功时返回终止的子进程ID，失败时返回-1
+*******************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -87,11 +101,6 @@ void read_childproc(int sig)
 	pid_t pid;
 	int status;
 
-	/*
-	等待终止子的进程ID，-1表示任意子进程
-	保存子进程返回值
-	可选项，WNOHANG 无子进程终止返回0,不进入阻塞状态
-	*/
 	pid = waitpid(-1, &status, WNOHANG);
 	printf("remove proc id: %d \n", pid);
 }
