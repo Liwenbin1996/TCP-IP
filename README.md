@@ -1,7 +1,7 @@
 # TCP-IP
 网络编程学习代码
 
-hello_client.ｃ
+hello_client.c
 “hello, world”客户端
 
 hello_server.c
