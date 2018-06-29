@@ -1,7 +1,7 @@
 # TCP-IP
 网络编程学习代码
 
-hello_client.c　　　　“hello, world”客户端
+hello_client.ｃ			“hello, world”客户端
 
 hello_server.c　　　　“hello, world”服务器端
 
@@ -9,13 +9,13 @@ uecho_client.c　　　　基于UDP的客户端
 
 uecho_server.c　　　　基于UDP的回声服务器端
 
-echo_stdclient.c　　　　回声客户端---基于标准I/O函数
+echo_stdclient.c　　　回声客户端---基于标准I/O函数
 
 echo_stdserv.c　　　　回声服务器端---基于标准I/O函数
 
-echo_mpclient.c　　　　回声客户端--基于I/O程序分割
+echo_mpclient.c　　　回声客户端--基于I/O程序分割
 
-echo_mpserv.c　　　　并发回声服务器端---基于多进程实现
+echo_mpserv.c　　　　　　并发回声服务器端---基于多进程实现
 
 echo_selectserv.c　　　　并发回声服务器端---基于I/O复用实现
 
